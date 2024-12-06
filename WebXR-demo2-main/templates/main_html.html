@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='libs/mindar/mindar-image-three.prod.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}" type="module"></script>
+    <script>
+      window.onerror = function (message, source, lineno, colno, error) {
+        fetch('/report_error', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: message,
+            source: source,
+            lineno: lineno,
+            colno: colno,
+            error: error ? error.stack : null
+          })
+        });
+      };
+    </script>
+    
+
+    <style>
+      html, body {position: relative; margin: 0; width: 100%; height: 100%; overflow: hidden;}
+    </style>
+  </head>
+  <body>
+  </body>
+</html>
