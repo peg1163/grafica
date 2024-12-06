@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       iframe.style.width = '100%';
       iframe.style.height = '100%';
       iframe.style.border = 'none';
-      iframe.src = "https://www.bibliotecacentral.uni.edu.pe/quienes-somos.html";
+      iframe.src = "https://fc.uni.edu.pe/nosotros/";
 
       // Añadir el iframe al contenedor
       iframeContainer.appendChild(iframe);
