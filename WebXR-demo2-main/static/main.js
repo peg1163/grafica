@@ -4,10 +4,10 @@ const THREE = window.MINDAR.IMAGE.THREE;
 document.addEventListener('DOMContentLoaded', () => {
   const start = async () => {
     try {
-      // Inicialización de MindAR
+      // Inicialización de MindAR con múltiples objetivos QR
       const mindarThree = new window.MINDAR.IMAGE.MindARThree({
         container: document.body,
-        imageTargetSrc: '/static/assets/targets/qr-target.mind',  // Archivo de referencia del QR
+        imageTargetSrc: '/static/assets/targets/qr-target.mind', // Archivo único con los 4 QR
       });
 
       const { renderer, scene, camera } = mindarThree;
@@ -16,69 +16,72 @@ document.addEventListener('DOMContentLoaded', () => {
       const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
       scene.add(light);
 
-      // Crear un contenedor HTML para la información que se mostrará al detectar el QR
+      // Crear un contenedor HTML para la información
       const infoDiv = document.createElement('div');
       infoDiv.style.position = 'absolute';
-      infoDiv.style.top = '10%'; // Ajustado para pantallas pequeñas
+      infoDiv.style.top = '10%';
       infoDiv.style.left = '50%';
       infoDiv.style.transform = 'translate(-50%, 0)';
-      infoDiv.style.width = '90%'; // Limitar ancho
-      infoDiv.style.height = '80%'; // Limitar altura
+      infoDiv.style.width = '90%';
+      infoDiv.style.height = '80%';
       infoDiv.style.padding = '15px';
       infoDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
       infoDiv.style.border = '2px solid #000';
       infoDiv.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
       infoDiv.style.visibility = 'hidden'; // Inicialmente oculto
       infoDiv.style.zIndex = '10';
-      infoDiv.style.overflowY = 'auto'; // Habilitar desplazamiento vertical
-      infoDiv.style.overflowX = 'hidden'; // Evitar desplazamiento horizontal innecesario
+      infoDiv.style.overflowY = 'auto';
       infoDiv.style.fontFamily = 'Arial, sans-serif';
-      infoDiv.style.borderRadius = '8px'; // Esquinas redondeadas
-      infoDiv.innerHTML = `
-        <h2 style="text-align: center; color: #333;">Unidad de Investigación</h2>
-        <p><strong>Portada » Investigación » Unidad de Investigación</strong></p>
-        <p>
-          Cada Facultad de la Universidad Nacional de Ingeniería posee una Unidad de Investigación formada por un director y un Comité Consultivo de Investigación. 
-          El Comité Consultivo está integrado por el director de la Unidad de Investigación y dos docentes investigadores de la facultad.
-        </p>
-        <h3>Funciones</h3>
-        <ul>
-          <li>Someter toda propuesta de investigación al Comité Consultivo de Investigación para su aprobación.</li>
-          <li>Verificar el cumplimiento de los requisitos formales según los reglamentos vigentes.</li>
-        </ul>
-        <h3>Procedimiento para otorgar subvenciones</h3>
-        <ol>
-          <li>Propuestas de bases para concursos son aprobadas en el Consejo de Facultad.</li>
-          <li>Postulaciones realizadas a través del Vicerrectorado de Investigación (VRI).</li>
-          <li>Evaluaciones por jurados externos determinan el ranking de proyectos.</li>
-          <li>Resultados enviados por el VRI permiten determinar los proyectos financiados.</li>
-        </ol>
-        <h3>Requisitos para los proyectos financiados</h3>
-        <ul>
-          <li>Contar con un Investigador Principal responsable de la formulación, ejecución y manejo económico.</li>
-          <li>Presentar informes técnicos y económicos al finalizar el proyecto.</li>
-          <li>Inventario valorizado de equipos adquiridos con fondos asignados.</li>
-        </ul>
-        <h3>Fuentes de financiamiento</h3>
-        <p>
-          Los proyectos pueden financiarse con recursos ordinarios, directamente recaudados, donaciones u otras fuentes. 
-          El monto de la subvención se establece según las bases del concurso.
-        </p>
-      `;
+      infoDiv.style.borderRadius = '8px';
       document.body.appendChild(infoDiv);
 
-      // Crear un ancla en la escena de AR para el QR detectado
-      const anchor = mindarThree.addAnchor(0);
+      // Crear anclas para cada QR y asociar su contenido
+      const places = [
+        {
+          id: 0, // QR 1
+          content: `
+            <h2 style="text-align: center; color: #333;">Lugar 1: Facultad</h2>
+            <p>La Unidad de Investigación fomenta la creación de proyectos científicos...</p>
+          `,
+        },
+        {
+          id: 1, // QR 2
+          content: `
+            <h2 style="text-align: center; color: #333;">Lugar 2:centro de investigacion</h2>
+            <p>La Facultad de Ingeniería ofrece programas de calidad en diversas áreas...</p>
+          `,
+        },
+        {
+          id: 2, // QR 3
+          content: `
+            <h2 style="text-align: center; color: #333;">Lugar 3: Biblioteca</h2>
+            <p>La Biblioteca Central cuenta con recursos digitales y físicos...</p>
+          `,
+        },
+        {
+          id: 3, // QR 4
+          content: `
+            <h2 style="text-align: center; color: #333;">Lugar 4: Estadistica </h2>
+            <p>Laboratorios diseñados para investigación avanzada en ingeniería y ciencias...</p>
+          `,
+        },
+      ];
 
-      // Agregar una función al ancla para mostrar el contenedor cuando el QR sea detectado
-      anchor.onTargetFound = () => {
-        infoDiv.style.visibility = 'visible'; // Mostrar la información cuando se detecte el QR
-      };
+      // Iterar sobre los lugares y crear anclas para cada QR
+      places.forEach(({ id, content }) => {
+        const anchor = mindarThree.addAnchor(id);
 
-      // Agregar una función para ocultar el contenedor cuando el QR ya no esté visible
-      anchor.onTargetLost = () => {
-        infoDiv.style.visibility = 'hidden'; // Ocultar la información cuando el QR se pierda
-      };
+        // Mostrar contenido específico al detectar el QR
+        anchor.onTargetFound = () => {
+          infoDiv.innerHTML = content;
+          infoDiv.style.visibility = 'visible'; // Mostrar la información
+        };
+
+        // Ocultar el contenedor cuando el QR ya no esté visible
+        anchor.onTargetLost = () => {
+          infoDiv.style.visibility = 'hidden'; // Ocultar la información
+        };
+      });
 
       // Iniciar MindAR
       await mindarThree.start();
