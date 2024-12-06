@@ -19,18 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
       // Crear un contenedor HTML para la información que se mostrará al detectar el QR
       const infoDiv = document.createElement('div');
       infoDiv.style.position = 'absolute';
-      infoDiv.style.top = '50%';
+      infoDiv.style.top = '10%'; // Ajustado para pantallas pequeñas
       infoDiv.style.left = '50%';
-      infoDiv.style.transform = 'translate(-50%, -50%)';
+      infoDiv.style.transform = 'translate(-50%, 0)';
+      infoDiv.style.width = '90%'; // Limitar ancho
+      infoDiv.style.height = '80%'; // Limitar altura
       infoDiv.style.padding = '15px';
       infoDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
       infoDiv.style.border = '2px solid #000';
       infoDiv.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
       infoDiv.style.visibility = 'hidden'; // Inicialmente oculto
-      infoDiv.style.zIndex = '10'; // Asegurar que esté visible sobre otros elementos
-      infoDiv.style.maxWidth = '80%';
-      infoDiv.style.overflowY = 'auto';
+      infoDiv.style.zIndex = '10';
+      infoDiv.style.overflowY = 'auto'; // Habilitar desplazamiento vertical
+      infoDiv.style.overflowX = 'hidden'; // Evitar desplazamiento horizontal innecesario
       infoDiv.style.fontFamily = 'Arial, sans-serif';
+      infoDiv.style.borderRadius = '8px'; // Esquinas redondeadas
       infoDiv.innerHTML = `
         <h2 style="text-align: center; color: #333;">Unidad de Investigación</h2>
         <p><strong>Portada » Investigación » Unidad de Investigación</strong></p>
@@ -92,4 +95,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   start();
 });
-
