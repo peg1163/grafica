@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; margin: 10px; max-width: 600px;">
               <h2 style="text-align: center; color: #2c3e50;">Centro Médico UNI</h2>
               <p style="text-align: center;">
-                <img src="./static/img/medico.JPEG" alt="Centro Médico UNI" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+                <img src="./static/img/medico.jpeg" alt="Centro Médico UNI" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
               </p>
               <p style="text-align: justify; color: #34495e; font-size: 16px; line-height: 1.6;">
                 La Universidad Nacional de Ingeniería realizó la ceremonia de entrega de obra y develación de la placa del Centro Médico UNI, que mejorará la capacidad y calidad en la atención y asistencia médica para toda la comunidad universitaria.
