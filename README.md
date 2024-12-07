@@ -8,4 +8,7 @@
 Para visualizar el despliegue dar click en [despliegue](https://grafica-production-0975.up.railway.app/)  
 
 ## Demo
-Para visualizar el video de la demo, dar click en [demo](https://grafica-production-0975.up.railway.app/)
+Para visualizar el video de la demo, dar click en [demo](https://youtube.com/shorts/PvDpSR0ZeqQ?si=TeLEDb6MczZfAE63)
+
+## Para realizar la prueba de verificación
+Usar los códigos QR 
