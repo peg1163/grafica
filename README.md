@@ -1,4 +1,4 @@
-# Práctica calificafa 5: 
+# Práctica calificada 5: 
 ## Integrantes
 - Jaime Gonzalo Acuña Napan
 - Maycoll Escobar Mejía  
