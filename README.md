@@ -11,4 +11,13 @@ Para visualizar el despliegue dar click en [despliegue](https://grafica-producti
 Para visualizar el video de la demo, dar click en [demo](https://youtube.com/shorts/PvDpSR0ZeqQ?si=TeLEDb6MczZfAE63)
 
 ## Para realizar la prueba de verificación
-Usar los códigos QR 
+Usar los códigos QR siguientes:  
+### Centro médico
+![Centro médico](material de pruba/CENTRO MEDICO.jpg)
+### Comedor
+![Comedor](material de pruba/COMEDOR.jpg)
+### Facultad de Ciencias (FC)
+![FC](material de pruba/FC.jpg)
+### Residencia estudiantil UNI
+![Residencia](material de pruba/RESIDENCIA.jpg)
+
