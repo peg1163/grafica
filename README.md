@@ -5,12 +5,13 @@
 - Edward Alexander Canales Yarin  
 
 ## Despliegue
-Para visualizar el despliegue dar click en [despliegue](https://grafica-production-0975.up.railway.app/)  
+Para visualizar el despliegue dar click en [despliegue](https://grafica-production-49ad.up.railway.app)  
 
 ## Demo
 Para visualizar el video de la demo, dar click en [demo](https://youtube.com/shorts/PvDpSR0ZeqQ?si=TeLEDb6MczZfAE63)
 
 ## Para realizar la prueba de verificación
+Usar la URL del despliegue [https://grafica-production-49ad.up.railway.app](https://grafica-production-49ad.up.railway.app)   
 Usar los códigos QR siguientes:  
 ### Centro médico
 ![Centro médico](material%20de%20prueba/CENTRO%20MEDICO.jpg)
