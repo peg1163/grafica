@@ -13,11 +13,11 @@ Para visualizar el video de la demo, dar click en [demo](https://youtube.com/sho
 ## Para realizar la prueba de verificación
 Usar los códigos QR siguientes:  
 ### Centro médico
-![Centro médico](material de pruba/CENTRO MEDICO.jpg)
+![Centro médico](material%20de%20prueba/CENTRO%20MEDICO.jpg)
 ### Comedor
-![Comedor](material de pruba/COMEDOR.jpg)
+![Comedor](material%20de%20prueba/COMEDOR.jpg)
 ### Facultad de Ciencias (FC)
-![FC](material de pruba/FC.jpg)
+![FC](material%20de%20prueba/FC.jpg)
 ### Residencia estudiantil UNI
-![Residencia](material de pruba/RESIDENCIA.jpg)
+![Residencia](material%20de%20prueba/RESIDENCIA.jpg)
 
